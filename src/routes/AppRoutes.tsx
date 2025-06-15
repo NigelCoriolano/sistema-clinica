@@ -1,16 +1,16 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { LoginPage } from '../pages/LoginPage';
-import { AgendaPage } from '../pages/AgendaPage';
+// src/routes/AppRoutes.tsx
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import LoginPage from '../pages/LoginPage';
+import AgendaPage from '../pages/AgendaPage';
 
-export function AppRoutes() {
+export default function AppRoutes() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        {/* Redirecionar da raiz para o login */}
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/agenda" element={<AgendaPage />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
